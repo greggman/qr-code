@@ -1,6 +1,6 @@
 # QR Code Generator
 
-A simple QR code generator
+A simple online QR code generator
 
 https://greggman.github.io/qr-code/
 
