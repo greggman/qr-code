@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>QR Code Generator</title>
+    <script type="module" src="index.js"></script>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg-color: #eee;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg-color: #333;
+        }
+      }
+      html, body {
+        font-family: monospace;
+      }
+      #text {
+        width: 100%;
+      }
+      button {
+        display: block;
+        margin: 0.5em 0 0.5em;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>QR Code Generator</h1>
+    <textarea id="text" placeholder="enter url (etc...) here"></textarea>
+    <button id="download" type="button" disabled>download qr code</button>
+    <canvas></canvas>
+  </body>
+</html>
