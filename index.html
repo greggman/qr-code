@@ -9,6 +9,7 @@
       :root {
         color-scheme: light dark;
         --bg-color: #eee;
+        --error-color: red;
       }
       @media (prefers-color-scheme: dark) {
         :root {
@@ -17,9 +18,13 @@
       }
       html, body {
         font-family: monospace;
+        background-color: var(--bg-color);
       }
       #text {
         width: 100%;
+      }
+      #error {
+        color: var(--error-color)
       }
       button {
         display: block;
@@ -35,5 +40,6 @@
     <textarea id="text" placeholder="enter or paste url (etc...) here"></textarea>
     <button id="download" type="button" disabled>download qr code</button>
     <canvas></canvas>
+    <p id="error"></p>
   </body>
 </html>

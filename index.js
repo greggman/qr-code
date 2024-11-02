@@ -17,6 +17,7 @@ const saveBlob = (function() {
 const textElem = document.querySelector('#text');
 const canvasElem = document.querySelector('canvas');
 const downloadElem = document.querySelector('#download');
+const errorElem = document.querySelector('#error');
 const ctx = canvasElem.getContext('2d');
 
 textElem.addEventListener('input', () => {
@@ -30,11 +31,17 @@ downloadElem.addEventListener('click', () => {
 
 function updateQRCode(s) {
   downloadElem.disabled = s ? '' : true;
+  canvasElem.height = 1;
+  errorElem.textContent = '';
   if (!s) {
-    canvasElem.width = 1;
     return;
   }
-  const qr = QrCode.encodeText(s, Ecc.MEDIUM);
+  let qr;
+  try {
+    qr = QrCode.encodeText(s, Ecc.MEDIUM);
+  } catch (e) {
+    errorElem.textContent = e.toString();
+  }
   const scale = 4;
   const padding = 3;
   const size = qr.size + padding * 2;
@@ -47,14 +54,6 @@ function updateQRCode(s) {
       ctx.fillRect(x, y, 1, 1);
     }
   }
-  //const img = new Image();
-  //img.src = ctx.canvas.toDataURL();
-  //qrCodesElem.appendChild(el('div', {
-  //  className: 'qrcode',
-  //}, [
-  //  el('div', {textContent: s}),
-  //  img,
-  //]));
 }
 
 console.log('here');
