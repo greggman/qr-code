@@ -10,7 +10,8 @@ I thought I'd throw together a simple one.
 
 ## Embedding
 
-Make an frame `https://greggman.github.io/qr-code/embed.html?s=<msg/url/etc>`
+Rather than download the image from the page above you can also make make an
+embedded iframe `https://greggman.github.io/qr-code/embed.html?s=<msg/url/etc>`
 
 Example:
 
@@ -22,6 +23,8 @@ Example:
   style="border: none"
 ></iframe>
 ```
+
+[Live Example](https://jsgist.org/?src=f088a92e9fe666efeefcf74eb1002fbc)
 
 ## License
 
